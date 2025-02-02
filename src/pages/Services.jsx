@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import { FaArrowLeft, FaArrowRight, FaCode, FaMobileAlt, FaChartLine, FaCogs, FaUsers } from "react-icons/fa";
-import "bootstrap/dist/css/bootstrap.min.css";
-import styles from "./Services.module.css";
+import styles from "./Services.module.css"; // Importing CSS module
 
 const menuItems = [
   { name: "Home", path: "/" },
@@ -43,7 +42,9 @@ const Services = () => {
 
         {/* Services Section */}
         <section className={styles.section}>
-          <h3 className={styles.sectionTitle}>My <span className={styles.primaryText}>Services</span></h3>
+          <h3 className={styles.sectionTitle}>
+            My <span className={styles.primaryText}>Services</span>
+          </h3>
           <div className="row text-center">
             {[
               { icon: <FaCode />, title: "Software Development", description: "Custom software solutions tailored to business needs." },

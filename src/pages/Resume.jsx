@@ -44,32 +44,43 @@ const Resume = () => {
         <section className={styles.section}>
           <h3>Profile Summary</h3>
           <p>
-            With over <strong>12 years</strong> of experience as a <strong>Principle Software Engineer</strong>, 
+            With over <strong>12 years</strong> of experience as a <strong>Principal Software Engineer</strong>, 
             I specialize in designing and developing <strong>scalable web applications, client-server systems, 
             and database solutions</strong>. I have expertise in full-stack development, 
             cloud computing, DevOps, and modern JavaScript frameworks.
           </p>
         </section>
 
-        {/* Experience Section */}
+        {/* Work Experience */}
         <section className={styles.section}>
           <h3>Work Experience</h3>
           <div className={styles.timeline}>
-            <div className={styles.timelineItem}>
-              <h4>Senior Software Engineer</h4>
-              <p className={styles.company}>Boston IVLTL Solutions | Aug 2018 - Present</p>
-              <p>Leading backend development, API design,Microservices, system optimization, and mentoring junior developers.</p>
-            </div>
-            <div className={styles.timelineItem}>
-              <h4>Software Engineer</h4>
-              <p className={styles.company}>Open Space Services Pvt Ltd. | Aug 2014 - Aug 2018</p>
-              <p>Developed dynamic e-commerce websites in JAVA,SPRING, implemented custom modules for Magento, and optimized UI/UX.</p>
-            </div>
-            <div className={styles.timelineItem}>
-              <h4>Web Developer</h4>
-              <p className={styles.company}>Webszol Pvt Ltd. | Jun 2013 - Jul 2014</p>
-              <p>Designed and maintained websites, implemented SEO best practices, and optimized performance.</p>
-            </div>
+            {[
+              {
+                title: "Senior Software Engineer",
+                company: "Boston IVLTL Solutions | Aug 2018 - Present",
+                description:
+                  "Leading backend development, API design, Microservices, system optimization, and mentoring junior developers.",
+              },
+              {
+                title: "Software Engineer",
+                company: "Open Space Services Pvt Ltd. | Aug 2014 - Aug 2018",
+                description:
+                  "Developed dynamic e-commerce websites in JAVA, SPRING, implemented custom modules for Magento, and optimized UI/UX.",
+              },
+              {
+                title: "Web Developer",
+                company: "Webszol Pvt Ltd. | Jun 2013 - Jul 2014",
+                description:
+                  "Designed and maintained websites, implemented SEO best practices, and optimized performance.",
+              },
+            ].map((job, index) => (
+              <div key={index} className={styles.timelineItem}>
+                <h4>{job.title}</h4>
+                <p className={styles.company}>{job.company}</p>
+                <p>{job.description}</p>
+              </div>
+            ))}
           </div>
         </section>
 
@@ -77,61 +88,83 @@ const Resume = () => {
         <section className={styles.section}>
           <h3>Key Skills</h3>
           <div className={styles.skillsGrid}>
-            {["Java", "Spring Boot", "React.js", "Next.js", "AWS", "Docker", "CI/CD", "Microservices", "Kafka", "JUnit", "Spring Security", "DevOps"].map((skill, index) => (
-              <span key={index} className={styles.skillBadge}>{skill}</span>
+            {[
+              "Java",
+              "Spring Boot",
+              "React.js",
+              "Next.js",
+              "AWS",
+              "Docker",
+              "CI/CD",
+              "Microservices",
+              "Kafka",
+              "JUnit",
+              "Spring Security",
+              "DevOps",
+            ].map((skill, index) => (
+              <span key={index} className={styles.skillBadge}>
+                {skill}
+              </span>
             ))}
           </div>
         </section>
 
-        {/* Education Section */}
+        {/* Education */}
         <section className={styles.section}>
           <h3>Education</h3>
           <div className={styles.timeline}>
-            <div className={styles.timelineItem}>
-              <h4>B.Tech in Computer Science</h4>
-              <p className={styles.company}>GBTU | 2012 | Grade: 70%</p>
-            </div>
-            <div className={styles.timelineItem}>
-              <h4>12th (Science Stream)</h4>
-              <p className={styles.company}>Uttar Pradesh Board | 2008</p>
-            </div>
-            <div className={styles.timelineItem}>
-              <h4>10th</h4>
-              <p className={styles.company}>Uttar Pradesh Board | 2006</p>
-            </div>
+            {[
+              { degree: "B.Tech in Computer Science", institute: "GBTU | 2012 | Grade: 70%" },
+              { degree: "12th (Science Stream)", institute: "Uttar Pradesh Board | 2008" },
+              { degree: "10th", institute: "Uttar Pradesh Board | 2006" },
+            ].map((edu, index) => (
+              <div key={index} className={styles.timelineItem}>
+                <h4>{edu.degree}</h4>
+                <p className={styles.company}>{edu.institute}</p>
+              </div>
+            ))}
           </div>
         </section>
 
-        {/* Projects Section */}
+        {/* Projects */}
         <section className={styles.section}>
           <h3>Projects</h3>
           <div className={styles.timeline}>
-            <div className={styles.timelineItem}>
-              <h4>PROTA SYSTEM</h4>
-              <p className={styles.company}>Duration: 36 Months</p>
-              <p>
-                Developed modules for Sales Order Management, Shipment Tracking, Purchase Orders, and Inventory 
-                Management. Integrated Kafka for messaging, AWS for cloud hosting, and Docker for containerization.
-              </p>
-            </div>
-            <div className={styles.timelineItem}>
-              <h4>Medikabazaar</h4>
-              <p className={styles.company}>Duration: 36 Months</p>
-              <p>
-                Built a multi-vendor e-commerce platform with React.js frontend, Spring Boot backend, and microservices architecture.
-              </p>
-            </div>
+            {[
+              {
+                name: "PROTA SYSTEM",
+                duration: "36 Months",
+                description:
+                  "Developed modules for Sales Order Management, Shipment Tracking, Purchase Orders, and Inventory Management. Integrated Kafka for messaging, AWS for cloud hosting, and Docker for containerization.",
+              },
+              {
+                name: "Medikabazaar",
+                duration: "36 Months",
+                description:
+                  "Built a multi-vendor e-commerce platform with React.js frontend, Spring Boot backend, and microservices architecture.",
+              },
+            ].map((project, index) => (
+              <div key={index} className={styles.timelineItem}>
+                <h4>{project.name}</h4>
+                <p className={styles.company}>Duration: {project.duration}</p>
+                <p>{project.description}</p>
+              </div>
+            ))}
           </div>
         </section>
 
-        {/* Certifications Section */}
+        {/* Certifications */}
         <section className={styles.section}>
           <h3>Certifications</h3>
           <ul className={styles.certifications}>
-            <li>Java Basic - HackerRank</li>
-            <li>SQL (Intermediate) - HackerRank</li>
-            <li>SQL (Advanced) - HackerRank</li>
-            <li>Software Engineer Intern - HackerRank</li>
+            {[
+              "Java Basic - HackerRank",
+              "SQL (Intermediate) - HackerRank",
+              "SQL (Advanced) - HackerRank",
+              "Software Engineer Intern - HackerRank",
+            ].map((cert, index) => (
+              <li key={index}>{cert}</li>
+            ))}
           </ul>
         </section>
 

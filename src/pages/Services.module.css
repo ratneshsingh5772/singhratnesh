@@ -1,4 +1,4 @@
-/* Container styling */
+/* Global Container */
 .container {
   padding: 2rem 1rem;
   display: flex;
@@ -6,7 +6,7 @@
   background: #f8f9fa;
 }
 
-/* Modern card with smooth shadow */
+/* Card Styling */
 .card {
   width: 100%;
   max-width: 1000px;
@@ -22,7 +22,7 @@
   box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
 }
 
-/* Header section */
+/* Header */
 .servicesHeader {
   background: linear-gradient(135deg, #4e54c8, #8f94fb);
   color: #fff;
@@ -35,7 +35,7 @@
   font-weight: 700;
 }
 
-/* Section styling */
+/* Section Styling */
 .section {
   padding: 2rem;
   border-bottom: 1px solid #ddd;
@@ -46,6 +46,10 @@
   font-weight: 600;
   color: #4e54c8;
   margin-bottom: 1rem;
+}
+
+.primaryText {
+  color: #ff758c;
 }
 
 /* Services Cards */
