@@ -1,0 +1,88 @@
+.container {
+  display: flex;
+  justify-content: center;
+  padding-top: 3rem;
+}
+
+.card {
+  width: 100%;
+  max-width: 1000px;
+  border: none;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  background: #fff;
+  padding: 2rem;
+}
+
+/* Header */
+.portfolioHeader {
+  background: linear-gradient(135deg, #4e54c8, #8f94fb);
+  color: #fff;
+  text-align: center;
+  padding: 2rem;
+  border-radius: 15px 15px 0 0;
+}
+
+.portfolioTitle {
+  margin: 0;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+/* Portfolio Grid */
+.portfolioItem {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.3s ease-in-out;
+  margin-bottom: 1.5rem;
+}
+
+.portfolioItem:hover {
+  transform: translateY(-5px);
+}
+
+.portfolioImage {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.portfolioOverlay {
+  position: absolute;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  width: 100%;
+  padding: 10px;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.portfolioItem:hover .portfolioOverlay {
+  opacity: 1;
+}
+
+/* Navigation */
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 0;
+}
+
+.navBtn {
+  background: #4e54c8;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.navBtn:hover {
+  background: #373aab;
+}

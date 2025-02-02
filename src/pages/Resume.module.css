@@ -1,0 +1,96 @@
+.container {
+  display: flex;
+  justify-content: center;
+  padding-top: 3rem;
+}
+
+.card {
+  width: 100%;
+  max-width: 900px;
+  border: none;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  background: #fff;
+  padding: 2rem;
+}
+
+/* Header */
+.resumeHeader {
+  background: linear-gradient(135deg, #4e54c8, #8f94fb);
+  color: #fff;
+  text-align: center;
+  padding: 2rem;
+  border-radius: 15px 15px 0 0;
+}
+
+.resumeTitle {
+  margin: 0;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+/* Section */
+.section {
+  margin-top: 2rem;
+}
+
+/* Timeline */
+.timeline {
+  border-left: 4px solid #4e54c8;
+  padding-left: 1rem;
+}
+
+.timelineItem {
+  margin-bottom: 1.5rem;
+}
+
+.company {
+  color: #6c757d;
+}
+
+/* Skills Grid */
+.skillsGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.skillBadge {
+  background: #4e54c8;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 14px;
+}
+
+/* Certifications */
+.certifications {
+  list-style: none;
+  padding: 0;
+}
+
+.certifications li {
+  padding: 5px 0;
+}
+
+/* Navigation */
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 0;
+}
+
+.navBtn {
+  background: #4e54c8;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.navBtn:hover {
+  background: #373aab;
+}
