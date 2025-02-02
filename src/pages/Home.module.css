@@ -1,11 +1,13 @@
-/* Container centering and padding */
+/* General container */
 .container {
   padding-top: 3rem;
   display: flex;
   justify-content: center;
+  align-items: center;
+  background: #f8f9fa;
 }
 
-/* Modern card with rounded corners and shadow */
+/* Card styling */
 .card {
   width: 100%;
   max-width: 900px;
@@ -14,9 +16,14 @@
   overflow: hidden;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
   background: #fff;
+  transition: all 0.3s ease-in-out;
 }
 
-/* Header with gradient background */
+.card:hover {
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* Header section */
 .header {
   background: linear-gradient(135deg, #4e54c8, #8f94fb);
   color: #fff;
@@ -24,126 +31,6 @@
   padding: 2rem 1rem;
 }
 
-/* Profile image styling */
-.profileImage {
-  width: 120px;
-  height: 120px;
-  border: 4px solid #fff;
-  border-radius: 50%;
-  object-fit: cover;
-  margin-bottom: 1rem;
-}
-
-/* Name and title styling */
-.name {
-  margin: 0;
-  font-size: 2rem;
-  font-weight: 700;
-}
-
-.title {
-  margin: 0.5rem 0;
-  font-size: 1.2rem;
-}
-
-/* Social icons with hover effect */
-.socialIcons {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-  margin-top: 1rem;
-}
-
-.socialIcons a {
-  color: #fff;
-  font-size: 1.4rem;
-  transition: color 0.3s;
-}
-
-.socialIcons a:hover {
-  color: #ffd700;
-}
-
-/* Content section padding */
-.content {
-  padding: 2rem;
-}
-
-/* Section spacing */
-.section {
-  margin-bottom: 2rem;
-}
-
-/* Primary text color for emphasis */
-.primaryText {
-  color: #4e54c8;
-}
-
-/* Download button styling */
-.downloadBtn {
-  background: transparent;
-  border: 2px solid #4e54c8;
-  color: #4e54c8;
-  padding: 0.5rem 1rem;
-  border-radius: 30px;
-  transition: background 0.3s, color 0.3s;
-  cursor: pointer;
-}
-
-.downloadBtn:hover {
-  background: #4e54c8;
-  color: #fff;
-}
-
-/* Contact information layout */
-.contactInfo {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-}
-
-.contactColumn {
-  flex: 1;
-  min-width: 200px;
-}
-
-/* Technology lists styling */
-.techList {
-  margin-top: 1rem;
-}
-
-.techSection {
-  margin-bottom: 1rem;
-}
-
-.techSection h5 {
-  margin-bottom: 0.3rem;
-  color: #4e54c8;
-}
-
-/* Navigation footer styling */
-.navigation {
-  display: flex;
-  justify-content: space-between;
-  padding: 1rem 2rem;
-  background: #f8f8f8;
-}
-
-.navBtn {
-  background: #fff;
-  border: 2px solid #4e54c8;
-  color: #4e54c8;
-  padding: 0.5rem 1rem;
-  border-radius: 30px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: background 0.3s, color 0.3s;
-}
-
-.navBtn:hover {
-  background: #4e54c8;
-  color: #fff;
-}
 /* Profile Icon */
 .profileIcon {
   width: 80px;
@@ -165,6 +52,86 @@
   transform: scale(1.1);
 }
 
+/* Name & title */
+.name {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.title {
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+/* Social Icons */
+.socialIcons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.socialIcons a {
+  color: #fff;
+  font-size: 1.4rem;
+  transition: transform 0.3s ease-in-out;
+}
+
+.socialIcons a:hover {
+  transform: scale(1.2);
+  color: #ffd700;
+}
+
+/* Content styling */
+.content {
+  padding: 2rem;
+}
+
+/* Section styling */
+.section {
+  margin-bottom: 2rem;
+}
+
+.section h3 {
+  font-size: 1.5rem;
+  color: #4e54c8;
+  font-weight: 700;
+}
+
+.primaryText {
+  color: #4e54c8;
+}
+
+/* Download Resume Button */
+.downloadBtn {
+  background: transparent;
+  border: 2px solid #4e54c8;
+  color: #4e54c8;
+  padding: 0.6rem 1.2rem;
+  border-radius: 30px;
+  font-weight: 600;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.downloadBtn:hover {
+  background: #4e54c8;
+  color: #fff;
+}
+
+/* Contact Info */
+.contactInfo {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.contactColumn {
+  flex: 1;
+  min-width: 200px;
+}
+
 /* Tech Stack Grid */
 .techList {
   display: grid;
@@ -173,7 +140,7 @@
   margin-top: 2rem;
 }
 
-/* Tech Section Card */
+/* Tech Section */
 .techSection {
   background: #f8f9fa;
   padding: 1.5rem;
@@ -189,7 +156,7 @@
   transform: translateY(-5px);
 }
 
-/* Tech Icon Styling */
+/* Tech Icons */
 .techIcon {
   font-size: 2.5rem;
   color: #4e54c8;
@@ -200,3 +167,70 @@
   color: #ffd700;
 }
 
+/* Navigation Buttons */
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  background: #f8f8f8;
+}
+
+.navBtn {
+  background: #fff;
+  border: 2px solid #4e54c8;
+  color: #4e54c8;
+  padding: 0.6rem 1.2rem;
+  border-radius: 30px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.navBtn:hover {
+  background: #4e54c8;
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem;
+  }
+
+  .card {
+    width: 100%;
+  }
+
+  .name {
+    font-size: 1.6rem;
+  }
+
+  .title {
+    font-size: 1rem;
+  }
+
+  .socialIcons {
+    gap: 0.8rem;
+  }
+
+  .techList {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+
+  .contactInfo {
+    flex-direction: column;
+  }
+
+  .downloadBtn {
+    width: 100%;
+    text-align: center;
+  }
+
+  .navigation {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1rem;
+  }
+}

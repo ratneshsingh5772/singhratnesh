@@ -73,7 +73,7 @@ const Home = () => {
               About <span className={styles.primaryText}>Me</span>
             </h3>
             <p>
-              Hello! I'm Ratnesh Singh, a passionate software engineer with expertise in modern web
+              Hello! I'm Ratnesh Singh, a passionate Principle software engineer with expertise in modern web
               development. I love solving problems and building scalable applications that make a
               difference.
             </p>
@@ -91,7 +91,7 @@ const Home = () => {
                   <strong>Residence:</strong> India
                 </p>
                 <p>
-                  <strong>Address:</strong> Mumbai,Maharashtra,India,401209
+                  <strong>Address:</strong> Mumbai, Maharashtra, India, 401209
                 </p>
               </div>
               <div className={styles.contactColumn}>
@@ -121,47 +121,45 @@ const Home = () => {
               technologies and frameworks, enabling me to deliver robust and efficient software solutions.
             </p>
             <div className={styles.techList}>
-  {[
-    {
-      icon: <FaLaptopCode />,
-      title: "Backend Technologies",
-      description: "Java, Spring Boot, JPA, Hibernate, RESTful & SOAP web services, XML, WSDL, SOA, PHP, Laravel, Magento",
-    },
-    {
-      icon: <FaCode />,
-      title: "Frontend Technologies",
-      description: "React.js, Next.js, JavaScript, jQuery, Ajax, HTML, CSS, TypeScript, MVC frameworks like Next.js",
-    },
-    {
-      icon: <FaDatabase />,
-      title: "Database Management",
-      description: "MySQL, MongoDB, PostgreSQL",
-    },
-    {
-      icon: <FaCloud />,
-      title: "DevOps & Cloud",
-      description: "AWS, Docker, CI/CD using Jenkins",
-    },
-    {
-      icon: <FaBug />,
-      title: "Testing",
-      description: "JUnit for unit and integration testing",
-    },
-    {
-      icon: <FaShieldAlt />,
-      title: "Security",
-      description: "Spring Security, JWT Authentication",
-    },
-  ].map((tech, index) => (
-    <div key={index} className={styles.techSection}>
-      <div className={styles.techIcon}>{tech.icon}</div>
-      <h5>{tech.title}</h5>
-      <p>{tech.description}</p>
-    </div>
-  ))}
-</div>
-
-
+              {[
+                {
+                  icon: <FaLaptopCode />,
+                  title: "Backend Technologies",
+                  description: "Java, Spring Boot, JPA, Hibernate, RESTful & SOAP web services, XML, WSDL, SOA, PHP, Laravel, Magento",
+                },
+                {
+                  icon: <FaCode />,
+                  title: "Frontend Technologies",
+                  description: "React.js, Next.js, JavaScript, jQuery, Ajax, HTML, CSS, TypeScript, MVC frameworks like Next.js",
+                },
+                {
+                  icon: <FaDatabase />,
+                  title: "Database Management",
+                  description: "MySQL, MongoDB, PostgreSQL",
+                },
+                {
+                  icon: <FaCloud />,
+                  title: "DevOps & Cloud",
+                  description: "AWS, Docker, CI/CD using Jenkins",
+                },
+                {
+                  icon: <FaBug />,
+                  title: "Testing",
+                  description: "JUnit for unit and integration testing",
+                },
+                {
+                  icon: <FaShieldAlt />,
+                  title: "Security",
+                  description: "Spring Security, JWT Authentication",
+                },
+              ].map((tech, index) => (
+                <div key={index} className={styles.techSection}>
+                  <div className={styles.techIcon}>{tech.icon}</div>
+                  <h5>{tech.title}</h5>
+                  <p>{tech.description}</p>
+                </div>
+              ))}
+            </div>
           </section>
         </main>
 

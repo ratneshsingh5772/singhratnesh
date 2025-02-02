@@ -1,9 +1,12 @@
+/* Container styling */
 .container {
+  padding: 2rem 1rem;
   display: flex;
   justify-content: center;
-  padding-top: 3rem;
+  background: #f8f9fa;
 }
 
+/* Modern card with smooth shadow */
 .card {
   width: 100%;
   max-width: 900px;
@@ -12,41 +15,75 @@
   overflow: hidden;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
   background: #fff;
-  padding: 2rem;
+  transition: all 0.3s ease-in-out;
 }
 
-/* Header */
+.card:hover {
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+}
+
+/* Header section */
 .resumeHeader {
   background: linear-gradient(135deg, #4e54c8, #8f94fb);
   color: #fff;
   text-align: center;
-  padding: 2rem;
-  border-radius: 15px 15px 0 0;
+  padding: 2rem 1rem;
 }
 
 .resumeTitle {
-  margin: 0;
-  font-size: 2rem;
-  font-weight: bold;
+  font-size: 2.2rem;
+  font-weight: 700;
 }
 
-/* Section */
+/* Section styling */
 .section {
-  margin-top: 2rem;
+  padding: 2rem;
+  border-bottom: 1px solid #ddd;
 }
 
-/* Timeline */
+.section h3 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #4e54c8;
+  margin-bottom: 1rem;
+}
+
+/* Timeline styling */
 .timeline {
-  border-left: 4px solid #4e54c8;
-  padding-left: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 1rem 0;
 }
 
 .timelineItem {
-  margin-bottom: 1.5rem;
+  background: #f8f9fa;
+  padding: 1.5rem;
+  border-radius: 10px;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.timelineItem:hover {
+  background: #4e54c8;
+  color: #fff;
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+.timelineItem h4 {
+  margin-bottom: 0.3rem;
+  font-size: 1.4rem;
 }
 
 .company {
-  color: #6c757d;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #666;
+}
+
+.timelineItem:hover .company {
+  color: #ffd700;
 }
 
 /* Skills Grid */
@@ -59,38 +96,96 @@
 .skillBadge {
   background: #4e54c8;
   color: white;
-  padding: 6px 12px;
+  padding: 0.6rem 1.2rem;
   border-radius: 20px;
-  font-size: 14px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: all 0.3s ease-in-out;
+}
+
+.skillBadge:hover {
+  background: #ffd700;
+  color: #4e54c8;
+  transform: scale(1.1);
 }
 
 /* Certifications */
 .certifications {
   list-style: none;
-  padding: 0;
+  padding-left: 0;
 }
 
 .certifications li {
-  padding: 5px 0;
+  background: #f8f9fa;
+  padding: 1rem;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: all 0.3s ease-in-out;
 }
 
-/* Navigation */
+.certifications li:hover {
+  background: #4e54c8;
+  color: #fff;
+  transform: translateY(-3px);
+}
+
+/* Navigation Footer */
 .navigation {
   display: flex;
   justify-content: space-between;
-  padding: 1rem 0;
+  padding: 1rem 2rem;
+  background: #f8f8f8;
 }
 
 .navBtn {
-  background: #4e54c8;
-  color: white;
-  padding: 0.5rem 1rem;
+  background: #fff;
+  border: 2px solid #4e54c8;
+  color: #4e54c8;
+  padding: 0.6rem 1.2rem;
   border-radius: 30px;
-  border: none;
-  cursor: pointer;
   font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s;
 }
 
 .navBtn:hover {
-  background: #373aab;
+  background: #4e54c8;
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+/* ---- Mobile Responsive Styles ---- */
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem;
+  }
+
+  .card {
+    width: 100%;
+  }
+
+  .resumeTitle {
+    font-size: 1.8rem;
+  }
+
+  .section {
+    padding: 1.5rem;
+  }
+
+  .timelineItem {
+    padding: 1rem;
+  }
+
+  .skillsGrid {
+    justify-content: center;
+  }
+
+  .navigation {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1rem;
+  }
 }
