@@ -1,24 +1,23 @@
-/* Navbar Brand Styling */
-.brand {
-  font-size: 1.8rem;
-  font-weight: 700;
-  transition: color 0.3s ease-in-out;
-}
-
-.brand:hover {
-  color: #4e54c8 !important;
-}
-
-/* Navbar background */
+/* General Navbar Styling */
 .navbar {
   background: #ffffff;
   padding: 1rem;
   box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease-in-out;
 }
 
-/* Navbar Links */
-.navbar-nav .nav-link {
+/* Navbar Brand */
+.brand {
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+/* Desktop Navigation */
+.desktopNav {
+  display: flex;
+  flex-grow: 1;
+}
+
+.desktopNav .nav-link {
   font-size: 1.1rem;
   font-weight: 600;
   color: #333;
@@ -26,80 +25,110 @@
   transition: all 0.3s ease-in-out;
 }
 
-.navbar-nav .nav-link:hover {
+.desktopNav .nav-link:hover {
   color: #4e54c8;
 }
 
 /* Active Link Styling */
-.navbar-nav .activeLink {
+.desktopNav .activeLink {
   color: #fff !important;
   background: linear-gradient(135deg, #4e54c8, #8f94fb);
   padding: 0.6rem 1rem;
   border-radius: 30px;
 }
 
-/* Navbar Toggle Icon */
-.navbar-toggler {
+/* Mobile Menu Button */
+.menuButton {
+  font-size: 1.8rem;
+  background: transparent;
   border: none;
-  outline: none;
-  padding: 0.5rem;
+  color: #4e54c8;
+  cursor: pointer;
+  display: none; /* Hide on desktop */
 }
 
-.navbar-toggler:focus {
-  box-shadow: none;
-}
-
-/* Navbar when expanded */
-.navbar-nav {
+/* Sidebar for Mobile */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -250px; /* Initially hidden */
+  width: 250px;
+  height: 100vh;
+  background: #ffffff;
+  box-shadow: 2px 0px 10px rgba(0, 0, 0, 0.1);
+  padding: 2rem 1rem;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
+  flex-direction: column;
+  transition: left 0.3s ease-in-out;
+  z-index: 1000;
+}
+
+/* When sidebar is open */
+.sidebarOpen {
+  left: 0;
+}
+
+/* Sidebar Close Button */
+.closeButton {
+  font-size: 1.5rem;
+  background: transparent;
+  border: none;
+  color: #4e54c8;
+  cursor: pointer;
+  align-self: flex-end;
+}
+
+/* Sidebar Navigation Links */
+.sidebarNav {
+  list-style: none;
+  padding: 0;
+  margin-top: 2rem;
+}
+
+.sidebarNav li {
+  margin-bottom: 1rem;
+}
+
+.sidebarNav .nav-link {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #333;
+  text-decoration: none;
+  transition: color 0.3s ease-in-out;
+}
+
+.sidebarNav .nav-link:hover {
+  color: #4e54c8;
+}
+
+/* Active Link Styling */
+.sidebarNav .activeLink {
+  color: #fff;
+  background: linear-gradient(135deg, #4e54c8, #8f94fb);
+  padding: 0.6rem 1rem;
+  border-radius: 10px;
+}
+
+/* Overlay when Sidebar is Open */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 500;
 }
 
 /* Mobile Optimization */
 @media (max-width: 991px) {
-  .navbar {
-    padding: 0.8rem;
+  /* Show the mobile menu button */
+  .menuButton {
+    display: block;
   }
 
-  .navbar-toggler {
-    background: #4e54c8;
-    padding: 8px 12px;
-    border-radius: 8px;
-  }
-
-  .navbar-toggler-icon {
-    filter: invert(1);
-  }
-
-  .navbar-collapse {
-    text-align: center;
-    background: #ffffff;
-    padding: 1rem;
-    border-radius: 10px;
-  }
-
-  .navbar-nav {
-    flex-direction: column;
-    width: 100%;
-  }
-
-  .navbar-nav .nav-link {
-    font-size: 1.2rem;
-    padding: 0.8rem;
-    width: 100%;
-    transition: background 0.3s ease-in-out;
-  }
-
-  .navbar-nav .nav-link:hover {
-    background: #f4f4f4;
-    border-radius: 10px;
-  }
-
-  .navbar-nav .activeLink {
-    display: inline-block;
-    width: 100%;
-    text-align: center;
+  /* Hide the desktop menu */
+  .desktopNav {
+    display: none;
   }
 }

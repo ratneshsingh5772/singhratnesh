@@ -1,13 +1,22 @@
-/* General container */
+/* Global Styles */
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  background-color: #f8f9fa;
+}
+
+/* Container */
 .container {
-  padding-top: 3rem;
+  width: 100%;
+  max-width: 100%;
+  padding: 1rem;
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #f8f9fa;
 }
 
-/* Card styling */
+/* Card Styling */
 .card {
   width: 100%;
   max-width: 900px;
@@ -23,7 +32,7 @@
   box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
 }
 
-/* Header section */
+/* Header */
 .header {
   background: linear-gradient(135deg, #4e54c8, #8f94fb);
   color: #fff;
@@ -43,7 +52,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0 auto 1rem auto;
+  margin: 0 auto 1rem;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s ease-in-out;
 }
@@ -52,7 +61,7 @@
   transform: scale(1.1);
 }
 
-/* Name & title */
+/* Name & Title */
 .name {
   font-size: 2rem;
   font-weight: 700;
@@ -83,12 +92,12 @@
   color: #ffd700;
 }
 
-/* Content styling */
+/* Content Styling */
 .content {
   padding: 2rem;
 }
 
-/* Section styling */
+/* Section Styling */
 .section {
   margin-bottom: 2rem;
 }
@@ -192,7 +201,7 @@
   transform: translateY(-2px);
 }
 
-/* Responsive Styles */
+/* Mobile Responsive Styles */
 @media (max-width: 768px) {
   .container {
     padding: 1rem;
@@ -200,6 +209,8 @@
 
   .card {
     width: 100%;
+    max-width: 100%;
+    margin: 0 10px;
   }
 
   .name {
