@@ -34,50 +34,53 @@ const Resume = () => {
   };
 
   return (
-    <div className={styles.container}>
-      <div className={styles.card}>
-        <header className={styles.resumeHeader}>
-          <h1 className={styles.resumeTitle}>Resume</h1>
+    // Updated container with gradient background and padding
+    <div className={styles.container} style={{ background: "linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%)", padding: "20px" }}>
+      <div className={styles.card} style={{ boxShadow: "0 4px 20px rgba(0,0,0,0.15)", borderRadius: "10px", overflow: "hidden", backgroundColor: "#fff" }}>
+        <header className={styles.resumeHeader} style={{ padding: "20px", borderBottom: "1px solid #eee" }}>
+          <h1 className={styles.resumeTitle} style={{ margin: 0, fontWeight: "bold", color: "#333" }}>Resume</h1>
         </header>
 
         {/* Profile Summary */}
-        <section className={styles.section}>
-          <h3>Profile Summary</h3>
+        <section className={styles.section} style={{ padding: "20px" }}>
+          <h3 style={{ borderBottom: "2px solid #5477f5", display: "inline-block", paddingBottom: "5px" }}>Profile Summary</h3>
           <p>
-            With over <strong>12 years</strong> of experience as a <strong>Principal Software Engineer</strong>, 
-            I specialize in designing and developing <strong>scalable web applications, client-server systems, 
-            and database solutions</strong>. I have expertise in full-stack development, 
-            cloud computing, DevOps, and modern JavaScript frameworks.
+            <strong>Co-Founder & Principal Software Engineer</strong> with over 12 years of experience in designing and developing scalable software solutions including AI-driven ERP systems, e-commerce platforms, and mobile applications using Java, React, AWS, and modern DevOps practices.
           </p>
         </section>
 
         {/* Work Experience */}
-        <section className={styles.section}>
-          <h3>Work Experience</h3>
+        <section className={styles.section} style={{ padding: "20px" }}>
+          <h3 style={{ borderBottom: "2px solid #5477f5", display: "inline-block", paddingBottom: "5px" }}>Work Experience</h3>
           <div className={styles.timeline}>
             {[
+              // New current job profile entry added
+              {
+                title: "Co-Founder & Principal Software Engineer",
+                company: "Further Grow | Current",
+                description: "Leading the design and development of AI-powered ERP and e-commerce solutions integrated with mobile apps, providing strategic technical architecture and mentoring development teams.",
+              },
               {
                 title: "Senior Software Engineer",
-                company: "Boston IVLTL Solutions | Aug 2018 - Present",
-                description:
-                  "Leading backend development, API design, Microservices, system optimization, and mentoring junior developers.",
+                company: "Boston IVLTL Solutions | Aug 2018 – Present",
+                description: "Led backend architecture, designed RESTful APIs, developed microservices, optimized system performance, and mentored teams.",
               },
               {
                 title: "Software Engineer",
-                company: "Open Space Services Pvt Ltd. | Aug 2014 - Aug 2018",
-                description:
-                  "Developed dynamic e-commerce websites in JAVA, SPRING, implemented custom modules for Magento, and optimized UI/UX.",
+                company: "Open Space Services Pvt Ltd. | Aug 2014 – Aug 2018",
+                description: "Built dynamic Java and Spring-based e-commerce solutions, developed Magento customizations, and improved user experiences.",
               },
               {
                 title: "Web Developer",
-                company: "Webszol Pvt Ltd. | Jun 2013 - Jul 2014",
-                description:
-                  "Designed and maintained websites, implemented SEO best practices, and optimized performance.",
+                company: "Webszol Pvt Ltd. | Jun 2013 – Jul 2014",
+                description: "Developed responsive websites, applied SEO best practices, and optimized web performance.",
               },
             ].map((job, index) => (
-              <div key={index} className={styles.timelineItem}>
-                <h4>{job.title}</h4>
-                <p className={styles.company}>{job.company}</p>
+              <div key={index} className={styles.timelineItem} style={{ marginBottom: "15px", transition: "transform 0.3s ease" , cursor: "pointer" }}
+                onMouseEnter={(e) => (e.currentTarget.style.transform = "translateX(10px)")}
+                onMouseLeave={(e) => (e.currentTarget.style.transform = "translateX(0)")}>
+                <h4 style={{ margin: "0 0 5px" }}>{job.title}</h4>
+                <p className={styles.company} style={{ fontStyle: "italic", color: "#777" }}>{job.company}</p>
                 <p>{job.description}</p>
               </div>
             ))}
@@ -85,8 +88,8 @@ const Resume = () => {
         </section>
 
         {/* Skills Section */}
-        <section className={styles.section}>
-          <h3>Key Skills</h3>
+        <section className={styles.section} style={{ padding: "20px" }}>
+          <h3 style={{ borderBottom: "2px solid #5477f5", display: "inline-block", paddingBottom: "5px" }}>Key Skills</h3>
           <div className={styles.skillsGrid}>
             {[
               "Java",
@@ -101,8 +104,23 @@ const Resume = () => {
               "JUnit",
               "Spring Security",
               "DevOps",
+              "RESTful APIs",
+              "MySQL",
+              "MongoDB"
             ].map((skill, index) => (
-              <span key={index} className={styles.skillBadge}>
+              <span 
+                key={index} 
+                className={styles.skillBadge}
+                style={{ transition: "background 0.3s ease", cursor: "pointer" }}
+                onMouseEnter={(e) => { 
+                  e.currentTarget.style.backgroundColor = "#5477f5"; 
+                  e.currentTarget.style.color = "#fff"; 
+                }}
+                onMouseLeave={(e) => { 
+                  e.currentTarget.style.backgroundColor = ""; 
+                  e.currentTarget.style.color = ""; 
+                }}
+              >
                 {skill}
               </span>
             ))}
@@ -110,8 +128,8 @@ const Resume = () => {
         </section>
 
         {/* Education */}
-        <section className={styles.section}>
-          <h3>Education</h3>
+        <section className={styles.section} style={{ padding: "20px" }}>
+          <h3 style={{ borderBottom: "2px solid #5477f5", display: "inline-block", paddingBottom: "5px" }}>Education</h3>
           <div className={styles.timeline}>
             {[
               { degree: "B.Tech in Computer Science", institute: "GBTU | 2012 | Grade: 70%" },
@@ -127,21 +145,19 @@ const Resume = () => {
         </section>
 
         {/* Projects */}
-        <section className={styles.section}>
-          <h3>Projects</h3>
+        <section className={styles.section} style={{ padding: "20px" }}>
+          <h3 style={{ borderBottom: "2px solid #5477f5", display: "inline-block", paddingBottom: "5px" }}>Projects</h3>
           <div className={styles.timeline}>
             {[
               {
-                name: "PROTA SYSTEM",
+                name: "PROTA SYSTEM (ERP)",
                 duration: "36 Months",
-                description:
-                  "Developed modules for Sales Order Management, Shipment Tracking, Purchase Orders, and Inventory Management. Integrated Kafka for messaging, AWS for cloud hosting, and Docker for containerization.",
+                description: "Developed ERP system including Sales Order, Purchase Orders, Inventory Management with Java, Spring Boot, AWS, Docker, and Kafka."
               },
               {
-                name: "Medikabazaar",
+                name: "Medikabazaar (E-Commerce Platform)",
                 duration: "36 Months",
-                description:
-                  "Built a multi-vendor e-commerce platform with React.js frontend, Spring Boot backend, and microservices architecture.",
+                description: "Designed and developed multi-vendor e-commerce solution using React.js frontend and Spring Boot microservices backend."
               },
             ].map((project, index) => (
               <div key={index} className={styles.timelineItem}>
@@ -154,14 +170,14 @@ const Resume = () => {
         </section>
 
         {/* Certifications */}
-        <section className={styles.section}>
-          <h3>Certifications</h3>
+        <section className={styles.section} style={{ padding: "20px" }}>
+          <h3 style={{ borderBottom: "2px solid #5477f5", display: "inline-block", paddingBottom: "5px" }}>Certifications</h3>
           <ul className={styles.certifications}>
             {[
               "Java Basic - HackerRank",
-              "SQL (Intermediate) - HackerRank",
-              "SQL (Advanced) - HackerRank",
-              "Software Engineer Intern - HackerRank",
+              "SQL Intermediate - HackerRank",
+              "SQL Advanced - HackerRank",
+              "Software Engineer Intern - HackerRank"
             ].map((cert, index) => (
               <li key={index}>{cert}</li>
             ))}
@@ -169,11 +185,11 @@ const Resume = () => {
         </section>
 
         {/* Navigation Buttons */}
-        <footer className={styles.navigation}>
-          <button className={styles.navBtn} onClick={handlePrev}>
+        <footer className={styles.navigation} style={{ padding: "20px", textAlign: "center", borderTop: "1px solid #eee" }}>
+          <button className={styles.navBtn} onClick={handlePrev} style={{ transition: "all 0.3s ease", padding: "10px 20px", borderRadius: "5px", marginRight: "10px", background: "#5477f5", color: "#fff", border: "none", cursor: "pointer" }}>
             <FaArrowLeft /> Prev
           </button>
-          <button className={styles.navBtn} onClick={handleNext}>
+          <button className={styles.navBtn} onClick={handleNext} style={{ transition: "all 0.3s ease", padding: "10px 20px", borderRadius: "5px", background: "#5477f5", color: "#fff", border: "none", cursor: "pointer" }}>
             Next <FaArrowRight />
           </button>
         </footer>

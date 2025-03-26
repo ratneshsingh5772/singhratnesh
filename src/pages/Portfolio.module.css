@@ -92,6 +92,19 @@ button:hover {
   transition: all 0.3s ease-in-out;
 }
 
+/* New Banner Image Styling */
+.portfolioBanner {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+  transition: transform 0.4s ease;
+}
+
+.portfolioBanner:hover {
+  transform: scale(1.02);
+}
+
 .portfolioOverlay {
   position: absolute;
   bottom: 0;

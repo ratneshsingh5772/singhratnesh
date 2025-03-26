@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import styles from "./Navbar.module.css"; // Import CSS Module
@@ -6,6 +6,14 @@ import { FaBars, FaTimes } from "react-icons/fa"; // Import icons
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false); // New state for scroll
+
+  // New effect to track scrolling and add "scrolled" class
+  useEffect(() => {
+    const handleScroll = () => setIsScrolled(window.scrollY > 50);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const toggleSidebar = () => setIsOpen(!isOpen);
   const closeSidebar = () => setIsOpen(false);
@@ -13,7 +21,7 @@ const Navbar = () => {
   return (
     <>
       {/* Top Navbar for Desktop */}
-      <nav className={`navbar navbar-expand-lg navbar-light ${styles.navbar}`}>
+      <nav className={`navbar navbar-expand-lg navbar-light ${styles.navbar} ${isScrolled ? styles.scrolled : ""}`}>
         <div className="container">
           {/* Logo */}
           <NavLink className={`navbar-brand fw-bold ${styles.brand}`} to="/">

@@ -57,7 +57,7 @@ const Contact = () => {
             </div>
             <p><FaMapMarkerAlt className={styles.icon} /> Mumbai,Maharashtra, India,401209</p>
             <p><FaEnvelope className={styles.icon} /> <a href="mailto:ratnesh.sheatvns@gmail.com">ratnesh.sheatvns@gmail.com</a></p>
-            <p><FaPhone className={styles.icon} /> +91 9022835872</p>
+            <p><FaPhone className={styles.icon} /> +91 9450903029</p>
           </div>
 
           {/* Contact Form */}
@@ -69,6 +69,9 @@ const Contact = () => {
               </div>
               <div className="mb-3">
                 <input type="email" className="form-control" placeholder="Email Address" required />
+              </div>
+              <div className="mb-3">
+                <input type="tel" className="form-control" placeholder="Mobile Number" required />
               </div>
               <div className="mb-3">
                 <textarea className="form-control" rows="4" placeholder="Your Message" required></textarea>
