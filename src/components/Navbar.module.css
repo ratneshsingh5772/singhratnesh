@@ -3,38 +3,73 @@
   background: #ffffff;
   padding: 1rem;
   box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1rem;
 }
 
 /* Navbar Brand */
 .brand {
   font-size: 1.8rem;
   font-weight: 700;
+  text-decoration: none;
+  color: #333;
+}
+
+.brandAccent {
+  color: #4e54c8;
 }
 
 /* Desktop Navigation */
 .desktopNav {
   display: flex;
   flex-grow: 1;
+  justify-content: flex-end;
 }
 
-.desktopNav .nav-link {
+.navList {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 0.5rem;
+}
+
+.navLink {
   font-size: 1.1rem;
   font-weight: 600;
   color: #333;
   padding: 0.6rem 1rem;
   transition: all 0.3s ease-in-out;
+  text-decoration: none;
+  border-radius: 30px;
 }
 
-.desktopNav .nav-link:hover {
+.navLink:hover {
   color: #4e54c8;
 }
 
 /* Active Link Styling */
-.desktopNav .activeLink {
+.activeLink {
   color: #fff !important;
   background: linear-gradient(135deg, #4e54c8, #8f94fb);
-  padding: 0.6rem 1rem;
-  border-radius: 30px;
+}
+
+/* Scrolled State */
+.scrolled {
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.15);
+  background: #f8f9fa;
 }
 
 /* Mobile Menu Button */
@@ -87,26 +122,6 @@
 
 .sidebarNav li {
   margin-bottom: 1rem;
-}
-
-.sidebarNav .nav-link {
-  font-size: 1.2rem;
-  font-weight: 600;
-  color: #333;
-  text-decoration: none;
-  transition: color 0.3s ease-in-out;
-}
-
-.sidebarNav .nav-link:hover {
-  color: #4e54c8;
-}
-
-/* Active Link Styling */
-.sidebarNav .activeLink {
-  color: #fff;
-  background: linear-gradient(135deg, #4e54c8, #8f94fb);
-  padding: 0.6rem 1rem;
-  border-radius: 10px;
 }
 
 /* Overlay when Sidebar is Open */

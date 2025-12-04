@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import styles from "./Resume.module.css"; // Importing CSS module

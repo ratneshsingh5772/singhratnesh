@@ -1,7 +1,6 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import { FaArrowLeft, FaArrowRight, FaMapMarkerAlt, FaEnvelope, FaPhone } from "react-icons/fa";
-import "bootstrap/dist/css/bootstrap.min.css";
 import styles from "./Contact.module.css";
 
 const menuItems = [
@@ -42,9 +41,9 @@ const Contact = () => {
           <h1 className={styles.contactTitle}>Contact Me</h1>
         </header>
 
-        <div className="row p-4">
+        <div className="grid md:grid-cols-2 gap-6 p-4">
           {/* Contact Info Section */}
-          <div className="col-md-6">
+          <div className="">
             <h3 className={styles.sectionTitle}>Get in <span className={styles.primaryText}>Touch</span></h3>
             <div className={styles.mapContainer}>
               <iframe
@@ -61,24 +60,24 @@ const Contact = () => {
           </div>
 
           {/* Contact Form */}
-          <div className="col-md-6">
+          <div className="">
             <h3 className={styles.sectionTitle}>Send a <span className={styles.primaryText}>Message</span></h3>
             <form>
-              <div className="mb-3">
-                <input type="text" className="form-control" placeholder="Full Name" required />
+              <div className="mb-4">
+                <input type="text" className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Full Name" required />
               </div>
-              <div className="mb-3">
-                <input type="email" className="form-control" placeholder="Email Address" required />
+              <div className="mb-4">
+                <input type="email" className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Email Address" required />
               </div>
-              <div className="mb-3">
-                <input type="tel" className="form-control" placeholder="Mobile Number" required />
+              <div className="mb-4">
+                <input type="tel" className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Mobile Number" required />
               </div>
-              <div className="mb-3">
-                <textarea className="form-control" rows="4" placeholder="Your Message" required></textarea>
+              <div className="mb-4">
+                <textarea className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" rows="4" placeholder="Your Message" required></textarea>
               </div>
 
               {/* reCAPTCHA */}
-              <div className="mb-3">
+              <div className="mb-4">
                 <div className={styles.recaptcha}>
                   <iframe
                     title="reCAPTCHA"
@@ -90,7 +89,7 @@ const Contact = () => {
                 </div>
               </div>
 
-              <button type="submit" className="btn btn-primary w-100">Send Message</button>
+              <button type="submit" className="w-full bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600 transition-colors">Send Message</button>
             </form>
           </div>
         </div>

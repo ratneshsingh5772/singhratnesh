@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
-import "bootstrap/dist/css/bootstrap.min.css";
 import styles from "./Navbar.module.css"; // Import CSS Module
 import { FaBars, FaTimes } from "react-icons/fa"; // Import icons
 
@@ -21,16 +20,16 @@ const Navbar = () => {
   return (
     <>
       {/* Top Navbar for Desktop */}
-      <nav className={`navbar navbar-expand-lg navbar-light ${styles.navbar} ${isScrolled ? styles.scrolled : ""}`}>
-        <div className="container">
+      <nav className={`${styles.navbar} ${isScrolled ? styles.scrolled : ""}`}>
+        <div className={styles.container}>
           {/* Logo */}
-          <NavLink className={`navbar-brand fw-bold ${styles.brand}`} to="/">
-            Ratnesh <span className="text-primary">Singh</span>
+          <NavLink className={styles.brand} to="/">
+            Ratnesh <span className={styles.brandAccent}>Singh</span>
           </NavLink>
 
           {/* Desktop Menu */}
-          <div className={`collapse navbar-collapse ${styles.desktopNav}`} id="navbarNav">
-            <ul className="navbar-nav ms-auto">
+          <div className={styles.desktopNav}>
+            <ul className={styles.navList}>
               {[
                 { name: "Home", path: "/" },
                 { name: "Resume", path: "/resume" },
@@ -38,10 +37,10 @@ const Navbar = () => {
                 { name: "Portfolio", path: "/portfolio" },
                 { name: "Contact", path: "/contact" },
               ].map((item) => (
-                <li className="nav-item" key={item.name}>
+                <li key={item.name}>
                   <NavLink
                     className={({ isActive }) =>
-                      isActive ? `nav-link ${styles.activeLink}` : "nav-link"
+                      isActive ? `${styles.navLink} ${styles.activeLink}` : styles.navLink
                     }
                     to={item.path}
                   >
@@ -75,7 +74,7 @@ const Navbar = () => {
             <li key={item.name}>
               <NavLink
                 className={({ isActive }) =>
-                  isActive ? `nav-link ${styles.activeLink}` : "nav-link"
+                  isActive ? `${styles.navLink} ${styles.activeLink}` : styles.navLink
                 }
                 to={item.path}
                 onClick={closeSidebar} // Close sidebar on menu click
