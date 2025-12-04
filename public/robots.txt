@@ -1,3 +1,16 @@
 # https://www.robotstxt.org/robotstxt.html
 User-agent: *
+Allow: /
+
+# Disallow admin or private areas (if any)
+# Disallow: /admin/
+# Disallow: /private/
+
+# Disallow API routes if you don't want them indexed
+# Disallow: /api/
+
+# Allow all content
 Disallow:
+
+# Sitemap location
+Sitemap: https://ratneshsingh.com/sitemap.xml

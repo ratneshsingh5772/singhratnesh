@@ -15,6 +15,10 @@ import {
   FaShieldAlt,
   FaDownload,
 } from "react-icons/fa";
+import PageSEO from "../components/SEO/PageSEO";
+import StructuredData from "../components/SEO/StructuredData";
+import { PAGE_SEO } from "../config/seoConfig";
+import { generateWebSiteSchema, generatePersonSchema, generateWebPageSchema, generateBreadcrumbSchema } from "../utils/schemaGenerators";
 import styles from "./Home.module.css";
 
 const menuItems = [
@@ -47,10 +51,37 @@ const Home = () => {
     navigate(menuItems[prevIndex].path);
   };
 
+  // SEO structured data
+  const breadcrumbs = [{ name: "Home", path: "/" }];
+  const schemas = [
+    generateWebSiteSchema(),
+    generatePersonSchema(),
+    generateWebPageSchema({
+      title: PAGE_SEO.home.title,
+      description: PAGE_SEO.home.description,
+      url: `https://ratneshsingh.com${PAGE_SEO.home.path}`,
+    }),
+    generateBreadcrumbSchema(breadcrumbs),
+  ];
+
   return (
-    <div className="min-h-screen pt-16 sm:pt-20 bg-gray-50">
-      {/* Hero Section */}
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-12 max-w-6xl">
+    <>
+      {/* SEO Meta Tags */}
+      <PageSEO
+        title={PAGE_SEO.home.title}
+        description={PAGE_SEO.home.description}
+        keywords={PAGE_SEO.home.keywords}
+        path={PAGE_SEO.home.path}
+        image={PAGE_SEO.home.image}
+        type="profile"
+      />
+
+      {/* Structured Data */}
+      <StructuredData data={schemas} />
+
+      <div className="min-h-screen pt-16 sm:pt-20 bg-gray-50">
+        {/* Hero Section */}
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-12 max-w-6xl">
         <div className="bg-white rounded-xl sm:rounded-2xl shadow-sm overflow-hidden">
           {/* Header Section */}
           <header className="relative bg-gradient-to-br from-blue-50 via-white to-purple-50 text-center py-12 sm:py-20 border-b border-gray-100">
@@ -253,7 +284,8 @@ const Home = () => {
           </footer>
         </div>
       </div>
-    </div>
+      </div>
+    </>
   );
 };
 

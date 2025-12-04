@@ -9,6 +9,10 @@ import {
   FaCertificate,
   FaCalendarAlt
 } from "react-icons/fa";
+import PageSEO from "../components/SEO/PageSEO";
+import StructuredData from "../components/SEO/StructuredData";
+import { PAGE_SEO } from "../config/seoConfig";
+import { generateWebPageSchema, generatePersonSchema, generateBreadcrumbSchema } from "../utils/schemaGenerators";
 
 const menuItems = [
   { name: "Home", path: "/" },
@@ -40,9 +44,38 @@ const Resume = () => {
     navigate(menuItems[prevIndex].path);
   };
 
+  // SEO structured data
+  const breadcrumbs = [
+    { name: "Home", path: "/" },
+    { name: "Resume", path: "/resume" }
+  ];
+  const schemas = [
+    generatePersonSchema(),
+    generateWebPageSchema({
+      title: PAGE_SEO.resume.title,
+      description: PAGE_SEO.resume.description,
+      url: `https://ratneshsingh.com${PAGE_SEO.resume.path}`,
+    }),
+    generateBreadcrumbSchema(breadcrumbs),
+  ];
+
   return (
-    <div className="min-h-screen pt-16 sm:pt-20 bg-gray-50">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-12 max-w-6xl">
+    <>
+      {/* SEO Meta Tags */}
+      <PageSEO
+        title={PAGE_SEO.resume.title}
+        description={PAGE_SEO.resume.description}
+        keywords={PAGE_SEO.resume.keywords}
+        path={PAGE_SEO.resume.path}
+        image={PAGE_SEO.resume.image}
+        type="profile"
+      />
+
+      {/* Structured Data */}
+      <StructuredData data={schemas} />
+
+      <div className="min-h-screen pt-16 sm:pt-20 bg-gray-50">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-12 max-w-6xl">
         <div className="bg-white rounded-xl sm:rounded-2xl shadow-sm overflow-hidden">
           
           {/* Header */}
@@ -283,7 +316,8 @@ const Resume = () => {
           </footer>
         </div>
       </div>
-    </div>
+      </div>
+    </>
   );
 };
 
